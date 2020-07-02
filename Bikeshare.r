@@ -7,13 +7,26 @@ wash = read.csv('washington.csv')
 chi = read.csv('chicago.csv')
 
 # initial 2
-wash$Gender <- NA #adding column Gender with NA values to table wash
-wash$Birth.Year <- NA #adding column Birth.Year with NA values to table wash
-wash$City <- 'Washington' #adding column city to table wash
-ny$City <- 'NY' #adding column city to table ny
-chi$City <- "Chicago" #adding column city to table chi
-ny_chi_wash=rbind(ny,chi,wash) #creating consolidated data frame
-ny_chi_wash$Start.Weekday <- weekdays(as.Date(ny_chi_wash$Start.Time)) # create a day of the week column
+#adding column Gender with NA values to table wash
+wash$Gender <- NA
+
+#adding column Birth.Year with NA values to table wash
+wash$Birth.Year <- NA
+
+#adding column city to table wash
+wash$City <- 'Washington'
+
+#adding column city to table ny
+ny$City <- 'NY'
+
+#adding column city to table chi
+chi$City <- "Chicago"
+
+#creating consolidated data frame
+ny_chi_wash=rbind(ny,chi,wash)
+
+# create a day of the week column
+ny_chi_wash$Start.Weekday <- weekdays(as.Date(ny_chi_wash$Start.Time))
 
 
 # initial 3
@@ -55,8 +68,11 @@ ny_chi_wash$Start.Weekday <- factor(ny_chi_wash$Start.Weekday,
                   theme(axis.text.x = element_text (angle=90))+
                   facet_wrap(~City)
 
-#getting summary statiscs
-by(ny_chi_wash$Start.Weekday, ny_chi_wash$City, summary)
+
+#Creating a formula to get summary statistics
+summ_statistics = function(var_input, by_input) {res = by(var_input, by_input, summary)
+    return(res)}
+summ_statistics (ny_chi_wash$Start.Weekday, ny_chi_wash$City)
 
 #answer:
 #In Chicago, the day of the week with the highest number of trips started is Monday; In New York and Washington it happens on Wednesdays;
@@ -109,4 +125,4 @@ summ_statistics = function(var_input, by_input) {res = by(var_input, by_input, s
 summ_statistics (ny_chi$Birth.Year, ny_chi$City)
 
 #answer:
-# "Millenials" is the generation with the highest number of trips on both Chicago and New York. The summary stastics show the median and the 3rd Quartile both fall within the Millenials' range (from years 1980 to 2000) and also that the max value is pretty close to the Millenials' end point (2000).
+# "Millenials" is the generation with the highest number of trips on both Chicago and New York. The summary statiscs show the median and the 3rd Quartile both fall within the Millenials' range (from years 1980 to 2000) and also that the max value is pretty close to the Millenials' end point (2000).
