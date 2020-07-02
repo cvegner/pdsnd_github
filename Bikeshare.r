@@ -68,8 +68,11 @@ ny_chi_wash$Start.Weekday <- factor(ny_chi_wash$Start.Weekday,
                   theme(axis.text.x = element_text (angle=90))+
                   facet_wrap(~City)
 
-#getting summary statiscs
-by(ny_chi_wash$Start.Weekday, ny_chi_wash$City, summary)
+
+#Creating a formula to get summary statistics
+summ_statistics = function(var_input, by_input) {res = by(var_input, by_input, summary)
+    return(res)}
+summ_statistics (ny_chi_wash$Start.Weekday, ny_chi_wash$City)
 
 #answer:
 #In Chicago, the day of the week with the highest number of trips started is Monday; In New York and Washington it happens on Wednesdays;
