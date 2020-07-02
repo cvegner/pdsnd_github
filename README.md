@@ -5,7 +5,7 @@ Project created on 30JUN2020
 Bikeshare
 
 ### Description
-Describe what your project is about and what it does
+Project to analyze bike share usage on new york, chicago and washington
 
 ### Files used
 Include the files used
