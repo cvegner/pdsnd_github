@@ -7,13 +7,26 @@ wash = read.csv('washington.csv')
 chi = read.csv('chicago.csv')
 
 # initial 2
-wash$Gender <- NA #adding column Gender with NA values to table wash
-wash$Birth.Year <- NA #adding column Birth.Year with NA values to table wash
-wash$City <- 'Washington' #adding column city to table wash
-ny$City <- 'NY' #adding column city to table ny
-chi$City <- "Chicago" #adding column city to table chi
-ny_chi_wash=rbind(ny,chi,wash) #creating consolidated data frame
-ny_chi_wash$Start.Weekday <- weekdays(as.Date(ny_chi_wash$Start.Time)) # create a day of the week column
+#adding column Gender with NA values to table wash
+wash$Gender <- NA
+
+#adding column Birth.Year with NA values to table wash
+wash$Birth.Year <- NA
+
+#adding column city to table wash
+wash$City <- 'Washington'
+
+#adding column city to table ny
+ny$City <- 'NY'
+
+#adding column city to table chi
+chi$City <- "Chicago"
+
+#creating consolidated data frame
+ny_chi_wash=rbind(ny,chi,wash)
+
+# create a day of the week column
+ny_chi_wash$Start.Weekday <- weekdays(as.Date(ny_chi_wash$Start.Time))
 
 
 # initial 3
