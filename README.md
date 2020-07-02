@@ -8,7 +8,7 @@ Bikeshare
 Project to analyze bike share usage on new york, chicago and washington
 
 ### Files used
-Include the files used
+Files included are: Bikeshare.r, new_york_city.csv, chicago.csv, and washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
