@@ -125,4 +125,4 @@ summ_statistics = function(var_input, by_input) {res = by(var_input, by_input, s
 summ_statistics (ny_chi$Birth.Year, ny_chi$City)
 
 #answer:
-# "Millenials" is the generation with the highest number of trips on both Chicago and New York. The summary stastics show the median and the 3rd Quartile both fall within the Millenials' range (from years 1980 to 2000) and also that the max value is pretty close to the Millenials' end point (2000).
+# "Millenials" is the generation with the highest number of trips on both Chicago and New York. The summary statiscs show the median and the 3rd Quartile both fall within the Millenials' range (from years 1980 to 2000) and also that the max value is pretty close to the Millenials' end point (2000).
